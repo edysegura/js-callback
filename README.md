@@ -4,9 +4,15 @@ A simple example to demonstrate how to use callback in JavaScript using image el
 
 ## How to fetch the images?
 
-In the command line run:
+Under scripts folder please run the command line bellow:
 
-```node scripts/catch-them-all.js```
+```node catch-them-all.js```
+
+## How to start
+
+After installing the dependencies with ```npm install``` run the command bellow:
+
+```npm start```
 
 ## References
 
