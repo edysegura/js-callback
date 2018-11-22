@@ -1,5 +1,10 @@
 const http = require('http')
 const fs = require('fs')
+const path = require('path')
+
+function getImagePath(pokemonNumber) {
+  return path.join(__dirname, `../images/pokemons/${pokemonNumber}.png`)
+}
 
 function catchPokemon(pokemonNumber) {
   const options = {
@@ -10,25 +15,21 @@ function catchPokemon(pokemonNumber) {
 
   http.get(options, function(response) {
     if (response.headers['content-type'] != 'image/png') {
-      return undefined
+      return
     }
 
     let chunks = []
-    response.on('data', (chunk) => chunks.push(chunk))
+    response.on('data', chunk => chunks.push(chunk))
 
     response.on('end', () => {
       const buffer = Buffer.concat(chunks)
-      fs.writeFile(
-        `../images/pokemons/${pokemonNumber}.png`,
-        buffer,
-        (error) =>{
-          if (error) {
-            console.log(`Missed Pokemon #${pokemonNumber}`)
-            return
-          }
-          console.log(`Caught Pokemon #${pokemonNumber}`)
+      fs.writeFile(getImagePath(pokemonNumber), buffer, error => {
+        if (error) {
+          console.log(`Missed Pokemon #${pokemonNumber}`)
+          return
         }
-      )
+        console.log(`Caught Pokemon #${pokemonNumber}`)
+      })
     })
   })
 }

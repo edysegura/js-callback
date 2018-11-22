@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A simple example to demonstrate how to use callback in JavaScript using image element",
   "scripts": {
-    "start": "live-server"
+    "start": "live-server",
+    "catch-them-all": "node scripts/catch-them-all.js"
   },
   "repository": {
     "type": "git",
