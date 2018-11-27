@@ -2,7 +2,8 @@
 
 const pokemonsNumber = Array
   .from(Array(251).keys())
-  .map(number => String(number + 1).padStart(3, '0'))
+  .map(number => String(number + 1)
+  .padStart(3, '0'))
 
 function updateProgressbar() {
   const progressBar = document.querySelector('progress')
