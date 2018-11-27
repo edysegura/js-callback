@@ -1,7 +1,9 @@
 'use strict'
 
-const pokemonsNumber = Array.from(Array(251).keys())
-  .map(number => String(number + 1).padStart(3, '0'))
+const pokemonsNumber = Array
+  .from(Array(251).keys())
+  .map(number => String(number + 1)
+  .padStart(3, '0'))
 
 let loaded = 0
 const total = pokemonsNumber.length
