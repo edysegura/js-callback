@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/edysegura/js-callback#readme",
   "devDependencies": {
-    "live-server": "^1.2.0"
+    "live-server": "^1.2.1"
   }
 }
