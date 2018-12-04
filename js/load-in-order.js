@@ -19,6 +19,13 @@ function updateProgressbar() {
   }
 }
 
+function onError(pokemonNumber) {
+  return () => {
+    console.error('Pokemon failed ' + pokemonNumber)
+    loadInOrder()
+  }
+}
+
 function loadInOrder() {
   const pokemonNumber = pokemonsNumber.shift()
   if (pokemonNumber) {
@@ -26,9 +33,7 @@ function loadInOrder() {
     image.src = `images/pokemons/${pokemonNumber}.png`
     image.addEventListener('load', updateProgressbar())
     image.addEventListener('load', loadInOrder)
-    image.addEventListener('error', () =>
-      console.log('Pokemon failed ' + pokemonNumber)
-    )
+    image.addEventListener('error', onError(pokemonNumber))
     document.body.appendChild(image)
   }
 }
