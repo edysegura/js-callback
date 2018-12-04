@@ -2,11 +2,11 @@
 
 A simple example to demonstrate how to use callback in JavaScript using image element
 
-## How to fetch the images?
+## How to fetch the images
 
-Under scripts folder please run the command line bellow:
+In order to have the images please run the command line bellow:
 
-```node catch-them-all.js```
+```npm run catch-them-all```
 
 ## How to start
 
