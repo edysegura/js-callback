@@ -5,7 +5,7 @@ const pokemonsNumber = Array
   .map(number => String(number + 1)
   .padStart(3, '0'))
 
-function updateProgressbar() {
+function progressBarScope() {
   const progressBar = document.querySelector('progress')
   const progressPercentage = document.querySelector('span')
   const total = pokemonsNumber.length
@@ -18,6 +18,7 @@ function updateProgressbar() {
     progressPercentage.textContent = percentage + '%'
   }
 }
+const updateProgressBar = progressBarScope()
 
 function onError(pokemonNumber) {
   return () => {
@@ -31,7 +32,7 @@ function loadInOrder() {
   if (pokemonNumber) {
     const image = new Image()
     image.src = `images/pokemons/${pokemonNumber}.png`
-    image.addEventListener('load', updateProgressbar())
+    image.addEventListener('load', updateProgressBar)
     image.addEventListener('load', loadInOrder)
     image.addEventListener('error', onError(pokemonNumber))
     document.body.appendChild(image)
