@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 
 function getImagePath(pokemonNumber) {
-  return path.join(__dirname, `../images/pokemons/${pokemonNumber}.png`)
+  return path.join(__dirname, `../src/images/pokemons/${pokemonNumber}.png`)
 }
 
 function catchPokemon(pokemonNumber) {
