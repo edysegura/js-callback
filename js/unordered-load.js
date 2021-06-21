@@ -22,7 +22,6 @@ const updateProgressBar = progressBarScope()
 function onError(pokemonNumber) {
   return () => {
     console.error('Pokemon failed ' + pokemonNumber)
-    loadInOrder()
   }
 }
 
